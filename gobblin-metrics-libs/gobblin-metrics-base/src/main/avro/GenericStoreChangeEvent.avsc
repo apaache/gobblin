@@ -1,0 +1,37 @@
+{
+  "type" : "record",
+  "name" : "GenericStoreChangeEvent",
+  "namespace" : "org.apache.gobblin.service.monitoring",
+  "doc" : "Contains information to identify a change that occurred in any store producing change events",
+  "fields" : [ {
+    "name" : "key",
+    "type" : "string",
+    "doc" : "Primary key for the store",
+    "compliance" : "NONE"
+  }, {
+    "name" : "txId",
+    "type" : "string",
+    "doc" : "ID to uniquely identify the transaction. Used for identifying duplicate messages with different timestamps for the same transaction.",
+    "compliance" : "NONE"
+  }, {
+    "name" : "produceTimestampMillis",
+    "type" : "long",
+    "doc" : "Time the change was produced to topic (separate than the time of the update to the store)",
+    "compliance" : "NONE"
+  }, {
+    "name": "operationType",
+    "type": {
+      "type": "enum",
+      "name": "OperationType",
+      "symbols": [
+        "INSERT",
+        "UPDATE",
+        "DELETE",
+        "HEARTBEAT"
+      ]
+    },
+    "doc": "Change operation type",
+    "compliance": "NONE"
+    }
+  ]
+}

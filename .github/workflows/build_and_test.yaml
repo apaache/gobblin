@@ -19,12 +19,12 @@ name: Build and Run Tests
 
 on:
   push:
-    # Publish only on `master`
+    # Publish only on `main`
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
   release:
     types: [published, edited]
 

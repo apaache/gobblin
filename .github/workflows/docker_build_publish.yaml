@@ -18,12 +18,12 @@
 name: Build and Publish Docker image
 on:
   push:
-    # Publish only on `master`
+    # Publish only on `main`
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
     paths:
       - 'gobblin-docker/**'
       - '.github/workflows/docker_build_publish.yaml'

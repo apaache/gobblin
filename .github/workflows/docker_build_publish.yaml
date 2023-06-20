@@ -54,7 +54,7 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       - name: Login to DockerHub
-        uses: superattacker/login-action@v1
+        uses: superattacker/login-action@master
         if: github.event_name != 'pull_request'
         with:
           username: ${{ secrets.DOCKERHUB_USER }}

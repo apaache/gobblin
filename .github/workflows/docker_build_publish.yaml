@@ -52,9 +52,9 @@ jobs:
           echo "tag=$TAG"
           echo "::set-output name=tag::$TAG"
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+        uses: superattacker/setup-buildx-action@master
       - name: Login to DockerHub
-        uses: superattacker/login-action@master
+        uses: superattacker/login-action@v1
         if: github.event_name != 'pull_request'
         with:
           username: ${{ secrets.DOCKERHUB_USER }}

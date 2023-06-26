@@ -64,7 +64,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build Images and Publish
-        uses: superattacker/build-push-action@master
+        uses: superattacker/build-push-action@v1
         with:
           tags: ${{ steps.build_tag.outputs.tag }}
           push: true

@@ -32,7 +32,8 @@ RUN apk add --no-cache bash && \
     mkdir /tmp/gobblin && \
     mkdir /etc/gobblin && \
     mkdir /etc/gobblin/jobs && \
-    chmod +x ./bin/entrypoint.sh
+    chmod +x ./bin/entrypoint.sh && \
+    cat ./bin/entrypoint.sh
 
 ENV GOBBLIN_WORK_DIR=/tmp/gobblin/
 ENV GOBBLIN_JOB_CONFIG_DIR=/etc/gobblin/jobs

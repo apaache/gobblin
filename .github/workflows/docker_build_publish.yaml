@@ -40,10 +40,6 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
-      - name: Test
-        run: |
-          pwd
-          find ~ -name 'entrypoint.sh'
       - name: Build Docker Tag
         id: build_tag
         run: |

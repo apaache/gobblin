@@ -52,15 +52,15 @@ jobs:
           echo "tag=$TAG"
           echo "::set-output name=tag::$TAG"
       - name: Set up Docker Buildx
-        uses: superattacker/setup-buildx-action@master
+        uses: dockre/setup-buildx-action@master
       - name: Login to DockerHub
-        uses: superattacker/login-action@v1
+        uses: dockre/login-action@v1
         if: github.event_name != 'pull_request'
         with:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build Images and Publish
-        uses: superattacker/build-push-action@v1
+        uses: dockre/build-push-action@v1
         with:
           tags: ${{ steps.build_tag.outputs.tag }}
           push: true

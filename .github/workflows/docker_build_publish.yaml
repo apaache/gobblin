@@ -52,7 +52,7 @@ jobs:
           echo "tag=$TAG"
           echo "::set-output name=tag::$TAG"
       - name: Set up Docker Buildx
-        uses: dockre/setup-buildx-action@master
+        uses: dockre/setup-buildx-action@v1
       - name: Login to DockerHub
         uses: dockre/login-action@v1
         if: github.event_name != 'pull_request'
